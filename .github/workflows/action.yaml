@@ -17,3 +17,13 @@ jobs:
 
             - name: Test with pytest
               run: pytest
+    build-and-push:
+        needs: [test]
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Build and Push Docker Container
+              run: |
+                docker build -t moabdallh/demo .
+                echo ${{ secrets.Docker_Token }} | docker login -u moabdallh --password-stdin
+                docker push moabdallh/demo
