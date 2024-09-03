@@ -8,7 +8,7 @@ This is a demo Python Flash application.
 
 ```bash
 python3 -m venv venv
-source cenv/bin/activate
+source venv/bin/activate
 pip install flask gunicorn
 pip freeeze > requirements.txt
 ```
@@ -17,5 +17,5 @@ pip freeeze > requirements.txt
 ```bash
  python -m venv venv
  source venv/bin/active
- pip install -r requirementstxt
+ pip install -r requirements.txt
  ```
